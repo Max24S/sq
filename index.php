@@ -295,6 +295,27 @@
 // $dateOBG=new DateFunctionsClass();
 // echo ($dateOBG->setDate1('2020-03-02')."<br>");
 // echo ($dateOBG->getDateInTimestamp());
+
+function getFIO($strFio) {
+    $strFio = trim(mb_strtolower($strFio));
+    $newStr = mb_strtoupper(mb_substr($strFio, 0, 1));
+    for ($i = 1;$i < mb_strlen($strFio); $i++) {
+      if (mb_substr($strFio, $i-1, 1)=== ' ') {
+        $newStr = $newStr.mb_strtoupper(mb_substr($strFio, $i, 1));
+      } else {
+        $newStr = $newStr.mb_strtolower(mb_substr($strFio, $i, 1));
+      }
+    }
+    return $newStr;
+  }
+  echo "2) ".getFIO('иванов ИВАН')."<br>";
+  
+  
+  function fileName($str) {
+    $newStr = substr($str, strrpos($str, '\\')+1, (strpos($str, '.') - strrpos($str, '\\'))-1);
+    return $newStr;
+  };
+  echo "3) ".fileName('D:\WebServers\home\testsite\www\myfile.txt')."<br>";
 class Animals
 {
     protected $type="";
