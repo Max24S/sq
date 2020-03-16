@@ -1,0 +1,17 @@
+{
+    "name": "root/pdo",
+    "authors": [
+        {
+            "name": "Pavel",
+            "email": "pavgont@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Academy\\": "src/"
+        }
+    }
+}
